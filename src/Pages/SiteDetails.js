@@ -38,9 +38,6 @@ const useStyles = makeStyles((theme) => ({
         width: "60px",
         background: "cover",
     },
-    red: {
-        backgroundColor: "red",
-    },
     cardContainer: {
         flexWrap: "no-wrap",
     },
@@ -76,6 +73,8 @@ const useStyles = makeStyles((theme) => ({
     },
     jobTitle: {
         marginLeft: "88px",
+        textOverflow: "hidden",
+        whiteSpace: "nowrap",
     },
 }));
 
@@ -98,103 +97,88 @@ function SiteDetails({ match }) {
     };
     return (
         <div className={classes.root}>
-            <Link className={classes.link} to={`/`} key={site.id}>
-                <Paper className={classes.paper}>
-                    <Grid container spacing={2} wrap="nowrap">
+            <Paper className={classes.paper}>
+                <Grid container spacing={2} wrap="nowrap">
+                    <Link className={classes.link} to={`/`} key={site.id}>
                         <ArrowBackIosIcon className={classes.forward} />
-                        <Grid item>
-                            <div className={classes.image}>
-                                <Avatar
-                                    alt="Track"
-                                    className={classes.siteAvatar}
-                                    src={
-                                        site && site.images ? (
-                                            site.images[0]
-                                        ) : (
-                                            <div>TT</div>
-                                        )
-                                    }
-                                ></Avatar>
-                            </div>
-                        </Grid>
+                    </Link>
+                    <Grid item>
+                        <div className={classes.image}>
+                            <Avatar
+                                alt="Track"
+                                className={classes.siteAvatar}
+                                src={
+                                    site && site.images ? (
+                                        site.images[0]
+                                    ) : (
+                                        <div>TT</div>
+                                    )
+                                }
+                            ></Avatar>
+                        </div>
+                    </Grid>
+                    <Grid item xs={12} sm container wrap="nowrap" zeroMinWidth>
                         <Grid
+                            wrap="nowrap"
+                            className={classes.mainContainer}
                             item
-                            xs={12}
                             sm
                             container
-                            wrap="nowrap"
-                            zeroMinWidth
+                            direction="column"
+                            spacing={2}
                         >
-                            <Grid
-                                wrap="nowrap"
-                                className={classes.mainContainer}
-                                item
-                                sm
-                                container
-                                direction="column"
-                                spacing={2}
-                            >
-                                <Grid item sm wrap="nowrap">
+                            <Grid item sm wrap="nowrap">
+                                <Typography
+                                    gutterBottom
+                                    variant="subtitle1"
+                                    className={classes.titleText}
+                                >
+                                    {site && site.title ? (
+                                        <span>{site.title}</span>
+                                    ) : (
+                                        <span>Site Name</span>
+                                    )}
+                                </Typography>
+                                <Typography variant="body2" gutterBottom>
                                     <Typography
-                                        gutterBottom
-                                        variant="subtitle1"
-                                        className={classes.titleText}
+                                        overflow="hidden"
+                                        textOverflow="elipsis"
+                                        className={classes.addressText}
                                     >
-                                        {site && site.title ? (
-                                            <span>{site.title}</span>
-                                        ) : (
-                                            <span>Site Name</span>
-                                        )}
-                                    </Typography>
-                                    <Typography variant="body2" gutterBottom>
-                                        <Typography
-                                            overflow="hidden"
-                                            textOverflow="elipsis"
-                                            className={classes.addressText}
-                                        >
-                                            {site && site.address ? (
-                                                <Typography
-                                                    noWrap
-                                                    className={
-                                                        classes.addressText
-                                                    }
-                                                >
-                                                    {site.address.street}
-                                                    &nbsp;
-                                                    {site.address.city}
-                                                    &nbsp;
-                                                    {site.address.state}
-                                                    &nbsp;
-                                                    {site.address.zipCode}
-                                                </Typography>
-                                            ) : (
-                                                <span>Site Address</span>
-                                            )}
-                                        </Typography>
-                                    </Typography>
-                                    <Typography variant="body2">
-                                        {site && site.contacts ? (
-                                            <span>
-                                                {site.contacts.main.firstName}
+                                        {site && site.address ? (
+                                            <Typography
+                                                noWrap
+                                                className={classes.addressText}
+                                            >
+                                                {site.address.street}
                                                 &nbsp;
-                                                {site.contacts.main.lastName}
-                                            </span>
+                                                {site.address.city}
+                                                &nbsp;
+                                                {site.address.state}
+                                                &nbsp;
+                                                {site.address.zipCode}
+                                            </Typography>
                                         ) : (
-                                            <span>Contact Name</span>
+                                            <span>Site Address</span>
                                         )}
                                     </Typography>
-                                </Grid>
-                                <Grid item wrap="nowrap">
-                                    <Typography
-                                        variant="body2"
-                                        style={{ cursor: "pointer" }}
-                                    ></Typography>
-                                </Grid>
+                                </Typography>
+                                <Typography variant="body2">
+                                    {site && site.contacts ? (
+                                        <span>
+                                            {site.contacts.main.firstName}
+                                            &nbsp;
+                                            {site.contacts.main.lastName}
+                                        </span>
+                                    ) : (
+                                        <span>Contact Name</span>
+                                    )}
+                                </Typography>
                             </Grid>
                         </Grid>
                     </Grid>
-                </Paper>
-            </Link>
+                </Grid>
+            </Paper>
             <Card className={classes.blank}>
                 <span></span>
             </Card>
@@ -215,13 +199,16 @@ function SiteDetails({ match }) {
                 >
                     {site && site.contacts ? (
                         <span>
-                            <Typography variant="body2">
+                            <Typography
+                                variant="body2"
+                                overflow="hidden"
+                                textOverflow="elipsis"
+                            >
                                 <IconButton className={classes.bottomIcon}>
                                     <SupervisorAccountIcon />
                                 </IconButton>
                                 {site.contacts.main.firstName}&nbsp;
                                 {site.contacts.main.lastName}
-                                <IconButton />
                                 <br></br>
                                 <span className={classes.jobTitle}>
                                     {site.contacts.main.jobTitle}
