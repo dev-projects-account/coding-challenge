@@ -26,23 +26,23 @@ const useStylesSiteList = makeStyles((theme) => ({
     link: {
         textDecoration: "none",
     },
+    siteListAvatar: {
+        height: "60px",
+        width: "60px",
+        background: "cover",
+    },
     appBarSecondary: {
         display: "flex",
         backgroundColor: "blue",
         color: "white",
         justifyContent: "center",
-        paddingRight: "70px",
+        paddingRight: "60px",
         borderTop: "1px solid black",
         borderRadius: 0,
     },
     secondaryAppBarText: {
         justifyContent: "center",
         paddingRight: "60px",
-    },
-    siteAvatar: {
-        height: "60px",
-        width: "60px",
-        background: "cover",
     },
     red: {
         backgroundColor: "red",

@@ -1,11 +1,10 @@
+import useStylesSiteList from "../Styles/SiteListStyles";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
-import useStylesSiteList from "../Styles/SiteListStyles";
 
 function SiteListCard({ site }) {
     const classes = useStylesSiteList();
@@ -16,6 +15,7 @@ function SiteListCard({ site }) {
                     <div className={classes.image}>
                         <Avatar
                             alt="Track"
+                            style={{ height: "60px", width: "60px" }}
                             className={classes.siteAvatar}
                             src={
                                 site && site.images ? (

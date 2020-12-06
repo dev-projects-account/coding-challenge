@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import useStylesSiteDetails from "../Styles/SiteDetailsStyles";
 import Blank from "../Components/Blank";
 import SiteOverviewTop from "../Components/SiteOverviewTop";
