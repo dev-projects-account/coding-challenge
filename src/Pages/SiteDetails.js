@@ -14,74 +14,13 @@ import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
 import PhoneIcon from "@material-ui/icons/Phone";
 import EmailIcon from "@material-ui/icons/Email";
 import RoomIcon from "@material-ui/icons/Room";
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-        overflow: "hidden",
-    },
-    paper: {
-        padding: theme.spacing(2),
-        alignItems: "flex-start",
-        wrap: "nowrap",
-        backgroundColor: "blue",
-    },
-    image: {
-        width: 50,
-        height: 128,
-    },
-    link: {
-        textDecoration: "none",
-    },
-    siteAvatar: {
-        height: "60px",
-        width: "60px",
-        background: "cover",
-    },
-    cardContainer: {
-        flexWrap: "no-wrap",
-    },
-    forward: {
-        marginTop: "40px",
-        color: "white",
-    },
-    addressText: {
-        overflow: "hidden",
-        noWrap: true,
-    },
-    mainContainer: {
-        width: "calc(95% + 11px)",
-    },
-    titleText: {
-        color: "white",
-    },
-    blank: {
-        height: "100px",
-    },
-    bottom: {
-        display: "flex",
-        flexDirection: "column",
-        wrap: "nowrap",
-        width: "calc(95% + 11px)",
-    },
-    bottomItem: {
-        display: "flex",
-        flexDirection: "row",
-    },
-    bottomIcon: {
-        marginRight: "40px",
-    },
-    jobTitle: {
-        marginLeft: "88px",
-        textOverflow: "hidden",
-        whiteSpace: "nowrap",
-    },
-}));
+import useStylesSiteDetails from "../Styles/SiteDetailsStyles";
 
 //fetch the details of selected site. Pass in match to the id to fetch data from that site.
 
 function SiteDetails({ match }) {
-    const classes = useStyles();
+    //const classes = useStyles();
+    const classes = useStylesSiteDetails();
     useEffect(() => {
         fetchSite();
     }, []);
@@ -230,14 +169,21 @@ function SiteDetails({ match }) {
                     zeroMinWidth
                     className={classes.bottomItem}
                 >
-                    <IconButton className={classes.bottomIcon}>
-                        <PhoneIcon />
-                    </IconButton>
-                    {site && site.contacts ? (
-                        <span>{site.contacts.main.phoneNumber}</span>
-                    ) : (
-                        <span>Contact Phone</span>
-                    )}
+                    <Typography
+                        variant="body2"
+                        overflow="hidden"
+                        textOverflow="elipsis"
+                    >
+                        <IconButton className={classes.bottomIcon}>
+                            <PhoneIcon />
+                        </IconButton>
+
+                        {site && site.contacts ? (
+                            <span>{site.contacts.main.phoneNumber}</span>
+                        ) : (
+                            <span>Contact Phone</span>
+                        )}
+                    </Typography>
                 </Grid>
                 <Grid item wrap="nowrap" zeroMinWidth>
                     {site && site.contacts ? (
