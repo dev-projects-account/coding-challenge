@@ -1,5 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 
+//styles for site details page
+
 const useStylesSiteDetails = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -10,6 +12,7 @@ const useStylesSiteDetails = makeStyles((theme) => ({
         alignItems: "flex-start",
         wrap: "nowrap",
         backgroundColor: "blue",
+        borderRadius: "0px",
     },
     image: {
         width: 50,

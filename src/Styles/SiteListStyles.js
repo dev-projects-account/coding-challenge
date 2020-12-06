@@ -1,5 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 
+//styles for site list page
+
 const useStylesSiteList = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -35,6 +37,7 @@ const useStylesSiteList = makeStyles((theme) => ({
     },
     secondaryAppBarText: {
         justifyContent: "center",
+        paddingRight: "60px",
     },
     siteAvatar: {
         height: "60px",
@@ -64,7 +67,7 @@ const useStylesSiteList = makeStyles((theme) => ({
         noWrap: true,
     },
     mainContainer: {
-        width: "calc(95% + 11px)",
+        width: "calc(90% + 11px)",
     },
 }));
 
