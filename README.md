@@ -34,4 +34,4 @@ The second page displays the details of the site the user had clicked. At the to
 
 At the bottom of the second page, you will find the main contact's details; their name and job title, phone number, email address and physical address.
 
-![Page Two](pageTwo.png "Page Two")
+![Page Two](pageTwo.jpg "Page Two")
