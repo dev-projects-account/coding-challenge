@@ -5,6 +5,8 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
+import { DEFAULT_BODY } from "../Constants";
+import { DEFAULT_SUBTITLE } from "../Constants";
 
 function SiteListCard({ site }) {
     const classes = useStylesSiteList();
@@ -45,14 +47,14 @@ function SiteListCard({ site }) {
                         spacing={2}
                     >
                         <Grid item sm wrap="nowrap">
-                            <Typography gutterBottom variant="subtitle1">
+                            <Typography gutterBottom variant={DEFAULT_SUBTITLE}>
                                 {site && site.title ? (
                                     <span>{site.title}</span>
                                 ) : (
                                     <span>Site Name</span>
                                 )}
                             </Typography>
-                            <Typography variant="body2" gutterBottom>
+                            <Typography variant={DEFAULT_BODY} gutterBottom>
                                 <Typography
                                     overflow="hidden"
                                     textOverflow="elipsis"
@@ -76,7 +78,7 @@ function SiteListCard({ site }) {
                                     )}
                                 </Typography>
                             </Typography>
-                            <Typography variant="body2">
+                            <Typography variant={DEFAULT_BODY}>
                                 {site && site.contacts ? (
                                     <span>
                                         {site.contacts.main.firstName}
@@ -90,7 +92,7 @@ function SiteListCard({ site }) {
                         </Grid>
                         <Grid item wrap="nowrap">
                             <Typography
-                                variant="body2"
+                                variant={DEFAULT_BODY}
                                 style={{ cursor: "pointer" }}
                             ></Typography>
                         </Grid>

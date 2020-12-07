@@ -7,6 +7,8 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
+import { DEFAULT_BODY } from "../Constants";
+import { DEFAULT_SUBTITLE } from "../Constants";
 
 function SiteOverviewTop({ site }) {
     const classes = useStylesSiteDetails();
@@ -44,7 +46,7 @@ function SiteOverviewTop({ site }) {
                         <Grid item sm wrap="nowrap">
                             <Typography
                                 gutterBottom
-                                variant="subtitle1"
+                                variant={DEFAULT_SUBTITLE}
                                 className={classes.titleText}
                             >
                                 {site && site.title ? (
@@ -53,7 +55,7 @@ function SiteOverviewTop({ site }) {
                                     <span>Site Name</span>
                                 )}
                             </Typography>
-                            <Typography variant="body2" gutterBottom>
+                            <Typography variant={DEFAULT_BODY} gutterBottom>
                                 <Typography
                                     overflow="hidden"
                                     textOverflow="elipsis"
@@ -77,7 +79,7 @@ function SiteOverviewTop({ site }) {
                                     )}
                                 </Typography>
                             </Typography>
-                            <Typography variant="body2">
+                            <Typography variant={DEFAULT_BODY}>
                                 {site && site.contacts ? (
                                     <span>
                                         {site.contacts.main.firstName}

@@ -67,7 +67,8 @@ const useStylesSiteList = makeStyles((theme) => ({
         noWrap: true,
     },
     mainContainer: {
-        width: "calc(90% + 11px)",
+        // width: "calc(80% + '30px')",
+        width: "95%",
     },
 }));
 

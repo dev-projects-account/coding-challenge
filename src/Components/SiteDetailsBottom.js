@@ -9,6 +9,7 @@ import PhoneIcon from "@material-ui/icons/Phone";
 import EmailIcon from "@material-ui/icons/Email";
 import RoomIcon from "@material-ui/icons/Room";
 import useStylesSiteDetails from "../Styles/SiteDetailsStyles";
+import { DEFAULT_BODY } from "../Constants";
 
 function SiteDetailsBottom({ site }) {
     const classes = useStylesSiteDetails();
@@ -31,7 +32,7 @@ function SiteDetailsBottom({ site }) {
                 {site && site.contacts ? (
                     <span>
                         <Typography
-                            variant="body2"
+                            variant={DEFAULT_BODY}
                             overflow="hidden"
                             textOverflow="elipsis"
                         >
@@ -62,7 +63,7 @@ function SiteDetailsBottom({ site }) {
                 className={classes.bottomItem}
             >
                 <Typography
-                    variant="body2"
+                    variant={DEFAULT_BODY}
                     overflow="hidden"
                     textOverflow="elipsis"
                 >
@@ -80,7 +81,7 @@ function SiteDetailsBottom({ site }) {
             <Grid item wrap="nowrap" zeroMinWidth>
                 {site && site.contacts ? (
                     <Typography
-                        variant="body2"
+                        variant={DEFAULT_BODY}
                         noWrap
                         className={classes.addressText}
                     >
@@ -101,7 +102,7 @@ function SiteDetailsBottom({ site }) {
             <Grid item wrap="nowrap" zeroMinWidth direction="row" spacing={2}>
                 <span>
                     {site && site.contacts ? (
-                        <Typography variant="body2" gutterBottom>
+                        <Typography variant={DEFAULT_BODY} gutterBottom>
                             <Typography
                                 overflow="hidden"
                                 textOverflow="elipsis"
@@ -109,7 +110,7 @@ function SiteDetailsBottom({ site }) {
                             >
                                 {site && site.address ? (
                                     <Typography
-                                        variant="body2"
+                                        variant={DEFAULT_BODY}
                                         noWrap
                                         className={classes.addressText}
                                     >
