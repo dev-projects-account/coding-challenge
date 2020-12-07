@@ -1,7 +1,6 @@
 import useStylesSiteDetails from "../Styles/SiteDetailsStyles";
 import React from "react";
 import { Link } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
