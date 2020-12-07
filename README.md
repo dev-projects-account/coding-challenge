@@ -21,3 +21,9 @@ or npm start
 cd coding-challenge/server
 
 json-server --watch db.json --port 4000
+
+# Page One
+
+The first page of the application consists of a list of all sites. Each site includes a site image, the site address, and the main contact. Click on the forward arrow on the right to advance to the site details page.
+
+![Page One](pageOne.jpg "Page One")
